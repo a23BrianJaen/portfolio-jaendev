@@ -91,7 +91,7 @@ export default function Home() {
         <div className="max-w-3xl mx-auto text-center">
           <div className="felx inline-flex">
             <div className="flex gap-4 mb-4">
-              <Image src="/images/BrianJaen.png" alt="Brian Jaen" className="rounded-full shadow-lg" width={120} height={90} />
+              {/* <Image src="/images/BrianJaenProfile.png" alt="Brian Jaen" className="rounded-full shadow-lg" width={120} height={120} /> */}
               <div className="flex items-center">
                 <a href="https://www.linkedin.com/in/brian-ja%C3%A9n-medina-513272252" target="_blank">
                   <span className="relative inline-flex overflow-hidden rounded-full p-[1px]">
@@ -117,13 +117,25 @@ export default function Home() {
 
             <Button
               size="lg"
-              className="w-full sm:w-auto bg-primary hover:bg-primary/90"
+              className="cursor-pointer w-full sm:w-auto bg-primary hover:bg-primary/90"
               asChild
             >
               <a
                 onClick={() => window.open('https://www.linkedin.com/in/brian-ja%C3%A9n-medina-513272252', '_blank')} rel="noopener noreferrer">
                 <Linkedin className="mr-2 h-4 w-4" />
                 LinkedIn
+              </a>
+            </Button>
+
+            <Button
+              size="lg"
+              className="cursor-pointer w-full sm:w-auto bg-primary hover:bg-primary/90"
+              asChild
+            >
+              <a
+                onClick={() => window.open('https://github.com/jaendev', '_blank')} rel="noopener noreferrer">
+                <Github className="mr-2 h-4 w-4" />
+                Github
               </a>
             </Button>
           </div>
@@ -198,24 +210,27 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="about" className="container mx-auto px-4 md:px-6 py-16 md:py-20 bg-secondary/50 backdrop-blur-sm">
-        <div className="max-w-xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Sobre mí</h2>
-          <p className="text-sm md:text-base text-muted-foreground mb-6 md:mb-8">
-            Llevo dos años programando y mi primer contacto con el mundo del desarrollado fue Java. A partir de ese momento no puedo dejar de programar y cada día intento ampliar aún más mis conocimientos.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button
-              variant="outline"
-              size="lg"
-              className="w-full sm:w-auto border-primary/20 hover:bg-primary/10"
-              asChild
-            >
-              <a href="https://github.com/jaendev" target="_blank" rel="noopener noreferrer">
-                <Github className="mr-2 h-4 w-4" />
-                GitHub
-              </a>
-            </Button>
+      <section id="about" className="container mx-auto mb-8 px-4 md:px-6 py-16 md:py-20 bg-secondary/50 backdrop-blur-sm">
+        <div className="grid grid-cols-2 gap-8">
+          <div className="max-w-xl">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Sobre mí</h2>
+            <div className="text-sm md:text-base text-muted-foreground mb-6 md:mb-8">
+              <p>
+                Me llamo Brian, pero mis amigos suelen llamarme Bri. Comencé en la programación hace dos años con Java, y desde entonces, cada nuevo desafío que resolvía aumentaba aún más mi pasión por este mundo.
+              </p>
+              <p>
+                Actualmente, he desarrollado proyectos como Syncblend, Triplan y ProfeNet, diseñados para mejorar la navegación y resolver problemas de clientes reales.
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center justify-center">
+            <Image
+              src="/images/BrianJaen.png"
+              alt="Brian Jaen"
+              className="border border-secondary rounded-lg shadow-lg object-cover rotate-3 p-3"
+              width={240}
+              height={180}
+            />
           </div>
         </div>
       </section>
