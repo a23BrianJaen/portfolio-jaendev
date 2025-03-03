@@ -1,11 +1,40 @@
 "use client";
 
+import { useState, useEffect, use } from "react";
+
 import { Github, Linkedin, Mail, ExternalLink } from "lucide-react";
+import Image from 'next/image'
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 export default function Home() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    }
+
+    handleResize()
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, []);
+
+  const handleClickMobile = () => {
+    if (isMobile) {
+      window.open("mailto:infobrian03@gmail.com", "_blank")
+    }
+  }
+
+  const handleClickDesktop = () => {
+    window.open("https://mail.google.com/mail/?view=cm&fs=1&to=infobrian03@gmail.com", "_blank")
+  }
+
   const projects = [
     {
       title: "Syncblend App",
@@ -32,6 +61,8 @@ export default function Home() {
 
   const description = ["Hi 👋🏻, I'm Brian and I'm a web developer. I have been programming for two years and my first contact with the world of developers was Java. From that moment on I can't stop programming and every day I try to expand my knowledge even more."]
 
+  const about = ["Hi 👋🏻, I'm Brian and I'm a web developer. I have been programming for two years and my first contact with the world of developers was Java. From that moment on I can't stop programming and every day I try to expand my knowledge even more."]
+
   // List of skills: frontend, backend, databases, tools and others
   const skills = [
     "HTML",
@@ -56,23 +87,45 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-background pt-16">
       {/* Hero/About Section */}
-      <section id="about" className="container mx-auto px-4 md:px-6 pt-20 md:pt-32 pb-16 md:pb-20">
+      <section className="container mx-auto px-4 md:px-6 pt-20 md:pt-32 pb-16 md:pb-20">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight mb-4 md:mb-6 bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
-            Full Stack Developer
+          <div className="felx inline-flex">
+            <div className="flex gap-4 mb-4">
+              <Image src="/images/BrianJaen.png" alt="Brian Jaen" className="rounded-full shadow-lg" width={120} height={90} />
+              <div className="flex items-center">
+                <a href="https://www.linkedin.com/in/brian-ja%C3%A9n-medina-513272252" target="_blank">
+                  <span className="relative inline-flex overflow-hidden rounded-full p-[1px]">
+                    <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#14b8a6_0%,#0f766e_50%,#14b8a6_100%)]"></span>
+                    <div className="inline-flex items-center justify-center w-full px-3 py-1 text-sm text-blue-800 bg-green-100 rounded-full cursor-pointer dark:bg-gray-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap">Disponible para trabajar</div>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <h1 className="text-xl md:text-4xl lg:text-4xl font-bold tracking-tight bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
+            Hey, soy Brian
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-6 md:mb-8 px-4">
-            {description}
+            Desarrollador, creando soluciones digitales desde Barcelona, España 🇪🇸.
+            Especializandome en el desarrollo de aplicaciones web.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90" onClick={() => window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=infobrian03@gmail.com`)} >
+            <Button size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90" onClick={isMobile ? handleClickMobile : handleClickDesktop} >
               <Mail className="mr-2 h-4 w-4" />
               Contact Me
             </Button>
-            {/* <Button onClick={() => window.open("https://github.com/jaendev", "_blank")} variant="outline" size="lg" className="w-full sm:w-auto border-primary/20 hover:bg-primary/10">
-              <Github className="mr-2 h-4 w-4" />
-              GitHub
-            </Button> */}
+
+            <Button
+              size="lg"
+              className="w-full sm:w-auto bg-primary hover:bg-primary/90"
+              asChild
+            >
+              <a
+                onClick={() => window.open('https://www.linkedin.com/in/brian-ja%C3%A9n-medina-513272252', '_blank')} rel="noopener noreferrer">
+                <Linkedin className="mr-2 h-4 w-4" />
+                LinkedIn
+              </a>
+            </Button>
           </div>
         </div>
       </section>
@@ -145,36 +198,13 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="container mx-auto px-4 md:px-6 py-16 md:py-20 bg-secondary/50 backdrop-blur-sm">
+      <section id="about" className="container mx-auto px-4 md:px-6 py-16 md:py-20 bg-secondary/50 backdrop-blur-sm">
         <div className="max-w-xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Let's Connect</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Sobre mí</h2>
           <p className="text-sm md:text-base text-muted-foreground mb-6 md:mb-8">
-            I'm always interested in hearing about new projects and opportunities.
+            Llevo dos años programando y mi primer contacto con el mundo del desarrollado fue Java. A partir de ese momento no puedo dejar de programar y cada día intento ampliar aún más mis conocimientos.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            {/* <Button
-              variant="outline"
-              size="lg"
-              className="w-full sm:w-auto border-primary/20 hover:bg-primary/10"
-              asChild
-            >
-              <a href="mailto:your.email@example.com">
-                <Mail className="mr-2 h-4 w-4" />
-                Email
-              </a>
-            </Button> */}
-            <Button
-              variant="outline"
-              size="lg"
-              className="w-full sm:w-auto border-primary/20 hover:bg-primary/10"
-              asChild
-            >
-              <a
-                onClick={() => window.open('https://www.linkedin.com/in/brian-ja%C3%A9n-medina-513272252', '_blank')} target="_blank" rel="noopener noreferrer">
-                <Linkedin className="mr-2 h-4 w-4" />
-                LinkedIn
-              </a>
-            </Button>
             <Button
               variant="outline"
               size="lg"

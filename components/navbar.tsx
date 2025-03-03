@@ -25,14 +25,12 @@ export function Navbar() {
     }
   };
 
-  const name = ["Brian Jaén"]
-
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-primary/10">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <span className="text-xl font-bold bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
-            {name}
+            Brian Jaén
           </span>
 
           {/* Desktop Navigation */}
@@ -40,30 +38,30 @@ export function Navbar() {
             <Button
               variant="ghost"
               className="text-muted-foreground hover:text-foreground hover:bg-primary/10"
-              onClick={() => scrollToSection("about")}
-            >
-              About
-            </Button>
-            <Button
-              variant="ghost"
-              className="text-muted-foreground hover:text-foreground hover:bg-primary/10"
               onClick={() => scrollToSection("skills")}
             >
-              Skills
+              Habilidades/Tecnologías
             </Button>
             <Button
               variant="ghost"
               className="text-muted-foreground hover:text-foreground hover:bg-primary/10"
               onClick={() => scrollToSection("projects")}
             >
-              Projects
+              Proyectos
             </Button>
             <Button
               variant="ghost"
               className="text-muted-foreground hover:text-foreground hover:bg-primary/10"
-              onClick={() => scrollToSection("contact")}
+              onClick={() => scrollToSection("about")}
             >
-              Contact
+              Sobre mí
+            </Button>
+            <Button
+              variant="ghost"
+              className="text-muted-foreground hover:text-foreground hover:bg-primary/10"
+              onClick={() => window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=infobrian03@gmail.com`)}
+            >
+              Contacto
             </Button>
             <ThemeToggle />
           </div>
@@ -91,30 +89,30 @@ export function Navbar() {
               <Button
                 variant="ghost"
                 className="w-full text-left text-muted-foreground hover:text-foreground hover:bg-primary/10"
-                onClick={() => scrollToSection("about")}
-              >
-                About
-              </Button>
-              <Button
-                variant="ghost"
-                className="w-full text-left text-muted-foreground hover:text-foreground hover:bg-primary/10"
                 onClick={() => scrollToSection("skills")}
               >
-                Skills
+                Habilidades/Tecnologías
               </Button>
               <Button
                 variant="ghost"
                 className="w-full text-left text-muted-foreground hover:text-foreground hover:bg-primary/10"
                 onClick={() => scrollToSection("projects")}
               >
-                Projects
+                Proyectos
               </Button>
               <Button
                 variant="ghost"
                 className="w-full text-left text-muted-foreground hover:text-foreground hover:bg-primary/10"
-                onClick={() => scrollToSection("contact")}
+                onClick={() => scrollToSection("about")}
               >
-                Contact
+                Sobre mí
+              </Button>
+              <Button
+                variant="ghost"
+                className="w-full text-left text-muted-foreground hover:text-foreground hover:bg-primary/10"
+                onClick={() => window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=infobrian03@gmail.com`)}
+              >
+                Contacto
               </Button>
             </div>
           </div>
