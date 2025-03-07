@@ -59,10 +59,6 @@ export default function Home() {
     }
   ];
 
-  const description = ["Hi 👋🏻, I'm Brian and I'm a web developer. I have been programming for two years and my first contact with the world of developers was Java. From that moment on I can't stop programming and every day I try to expand my knowledge even more."]
-
-  const about = ["Hi 👋🏻, I'm Brian and I'm a web developer. I have been programming for two years and my first contact with the world of developers was Java. From that moment on I can't stop programming and every day I try to expand my knowledge even more."]
-
   // List of skills: frontend, backend, databases, tools and others
   const skills = [
     "HTML",
@@ -84,6 +80,70 @@ export default function Home() {
     "React Native",
   ]
 
+  const frontend = [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Next.js",
+    "VUE",
+    "Nuxt",
+    "Astro"
+  ]
+
+  const ui_frameworks = [
+    "Tailwind CSS",
+    "SASS",
+    "Material UI",
+    "CSS",
+    "Styled Components"
+  ]
+
+  const backend = [
+    "Node.js",
+    "Laravel",
+    "PHP",
+    "Python",
+    "Java",
+    "Mysql",
+    "MongoDB",
+  ]
+
+  const devops = [
+    "CI/CD",
+    "GitHub Actions",
+    "Docker",
+    "Nginx",
+    "Apache",
+    "Deployment Automation",
+    "Clouding",
+  ];
+
+  const mobile = [
+    "React Native",
+    "Android Studio",
+    "Expo (React Native)",
+    "Java (Android)",
+    "React Navigation",
+    "SQLite",
+  ];
+
+  const others = [
+    "Git",
+    "Postman",
+    "Yaak",
+    "Docker Compose",
+    "npm",
+    "pnpm",
+    "ESLint",
+    "Prettier",
+    "Cypress",
+    "VS Code",
+    "Linux",
+    "Thunder Client",
+  ]
+
   return (
     <main className="min-h-screen bg-background pt-16">
       {/* Hero/About Section */}
@@ -102,7 +162,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <h1 className="text-xl md:text-4xl lg:text-4xl font-bold tracking-tight bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
+          <h1 className="text-xl md:text-4xl lg:text-4xl font-bold tracking-tight bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent mb-2">
             Hey, soy Brian
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-6 md:mb-8 px-4">
@@ -145,23 +205,74 @@ export default function Home() {
 
       {/* Skills Section */}
       <section id="skills" className="container mx-auto px-4 md:px-6 py-16 md:py-20 bg-secondary/50 backdrop-blur-sm">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">Skills & Technologies</h2>
-        <div className="flex flex-wrap gap-2 justify-center max-w-3xl mx-auto">
-          {skills.map((skill, skillId) => (
-            <Badge
-              key={skillId}
-              variant="secondary"
-              className="text-sm py-1 px-3 bg-primary/10 hover:bg-primary/20 transition-colors"
-            >
-              {skill}
-            </Badge>
-          ))}
+        <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">Habilidades & Tecnologías</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="border-2 border-primary/10 p-4 md:p-6 rounded-lg">
+            <h1 className="text-xl md:text-4xl lg:text-4xl font-bold tracking-tight bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent mb-4 text-center">Frontend</h1>
+            <div className="flex flex-wrap gap-2 justify-center max-w-3xl mx-auto">
+              {frontend && frontend?.map((skill, skillId) => (
+                <Badge key={skillId} className="text-sm py-1 px-3 bg-primary/50 hover:bg-primary/70 transition-colors">
+                  {skill}
+                </Badge>
+              ))}
+            </div>
+          </div>
+          <div className="border-2 border-primary/10 p-4 md:p-6 rounded-lg">
+            <h1 className="text-xl md:text-4xl lg:text-4xl font-bold tracking-tight bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent mb-4 text-center">Backend</h1>
+            <div className="flex flex-wrap gap-2 justify-center max-w-3xl mx-auto">
+              {backend && backend?.map((skill, skillId) => (
+                <Badge key={skillId} className="text-sm py-1 px-3 bg-primary/50 hover:bg-primary/70 transition-colors">
+                  {skill}
+                </Badge>
+              ))}
+            </div>
+          </div>
+          <div className="border-2 border-primary/10 p-4 md:p-6 rounded-lg">
+            <h1 className="text-xl md:text-4xl lg:text-4xl font-bold tracking-tight bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent mb-4 text-center">UI Frameworks</h1>
+            <div className="flex flex-wrap gap-2 justify-center max-w-3xl mx-auto">
+              {ui_frameworks && ui_frameworks?.map((skill, skillId) => (
+                <Badge key={skillId} className="text-sm py-1 px-3 bg-primary/50 hover:bg-primary/70 transition-colors">
+                  {skill}
+                </Badge>
+              ))}
+            </div>
+          </div>
+          <div className="border-2 border-primary/10 p-4 md:p-6 rounded-lg">
+            <h1 className="text-xl md:text-4xl lg:text-4xl font-bold tracking-tight bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent mb-4 text-center">DevOps</h1>
+            <div className="flex flex-wrap gap-2 justify-center max-w-3xl mx-auto">
+              {devops && devops?.map((skill, skillId) => (
+                <Badge key={skillId} className="text-sm py-1 px-3 bg-primary/50 hover:bg-primary/70 transition-colors">
+                  {skill}
+                </Badge>
+              ))}
+            </div>
+          </div>
+          <div className="border-2 border-primary/10 p-4 md:p-6 rounded-lg">
+            <h1 className="text-xl md:text-4xl lg:text-4xl font-bold tracking-tight bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent mb-4 text-center">DevOps</h1>
+            <div className="flex flex-wrap gap-2 justify-center max-w-3xl mx-auto">
+              {mobile && mobile?.map((skill, skillId) => (
+                <Badge key={skillId} className="text-sm py-1 px-3 bg-primary/50 hover:bg-primary/70 transition-colors">
+                  {skill}
+                </Badge>
+              ))}
+            </div>
+          </div>
+          <div className="border-2 border-primary/10 p-4 md:p-6 rounded-lg">
+            <h1 className="text-xl md:text-4xl lg:text-4xl font-bold tracking-tight bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent mb-4 text-center">Others</h1>
+            <div className="flex flex-wrap gap-2 justify-center max-w-3xl mx-auto">
+              {others && others?.map((skill, skillId) => (
+                <Badge key={skillId} className="text-sm py-1 px-3 bg-primary/50 hover:bg-primary/70 transition-colors">
+                  {skill}
+                </Badge>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Projects Section */}
       <section id="projects" className="container mx-auto px-4 md:px-6 py-16 md:py-20">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">Featured Projects</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">Proyectos</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {projects.map((project) => (
             <Card key={project.title} className="bg-card/50 backdrop-blur-sm hover:shadow-lg hover:shadow-primary/10 transition-all border-primary/10">
@@ -211,15 +322,15 @@ export default function Home() {
 
       {/* Contact Section */}
       <section id="about" className="container mx-auto mb-8 px-4 md:px-6 py-16 md:py-20 bg-secondary/50 backdrop-blur-sm">
-        <div className="grid grid-cols-2 gap-8">
+        <div className="md:grid grid-cols-2 gap-8">
           <div className="max-w-xl">
             <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Sobre mí</h2>
-            <div className="text-sm md:text-base text-muted-foreground mb-6 md:mb-8">
+            <div className="text-sm md:text-base text-muted-foreground mb-6 md:mb-8 [&>p]:mb-4 [&>p>strong]:text-yellow-500 dark:[&>p>strong]:text-yellow-100 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1">
               <p>
-                Me llamo Brian, pero mis amigos suelen llamarme Bri. Comencé en la programación hace dos años con Java, y desde entonces, cada nuevo desafío que resolvía aumentaba aún más mi pasión por este mundo.
+                Me llamo Brian, pero mis amigos suelen llamarme Bri. <strong>Comencé en la programación hace dos años con Java</strong>, y desde entonces, cada nuevo desafío que resolvía aumentaba aún más mi pasión por este mundo tan extenso.
               </p>
               <p>
-                Actualmente, he desarrollado proyectos como Syncblend, Triplan y ProfeNet, diseñados para mejorar la navegación y resolver problemas de clientes reales.
+                Actualmente,<strong> he desarrollado proyectos</strong> como Syncblend, Triplan y ProfeNet, diseñados para mejorar la navegación y sobretodo <strong>para resolver problemas de clientes del mundo real.</strong>
               </p>
             </div>
           </div>
@@ -227,7 +338,7 @@ export default function Home() {
             <Image
               src="/images/BrianJaen.png"
               alt="Brian Jaen"
-              className="border border-secondary rounded-lg shadow-lg object-cover rotate-3 p-3"
+              className="border border-secondary rounded-lg shadow-lg object-cover rotate-3 p-3 hover:rotate-0 hover:scale-110 transition-all duration-300"
               width={240}
               height={180}
             />
