@@ -141,6 +141,7 @@ export default function Home() {
     "Cypress",
     "VS Code",
     "Linux",
+    "Jest",
     "Thunder Client",
   ]
 
@@ -248,7 +249,7 @@ export default function Home() {
             </div>
           </div>
           <div className="border-2 border-primary/10 p-4 md:p-6 rounded-lg">
-            <h1 className="text-xl md:text-4xl lg:text-4xl font-bold tracking-tight bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent mb-4 text-center">DevOps</h1>
+            <h1 className="text-xl md:text-4xl lg:text-4xl font-bold tracking-tight bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent mb-4 text-center">Mobile</h1>
             <div className="flex flex-wrap gap-2 justify-center max-w-3xl mx-auto">
               {mobile && mobile?.map((skill, skillId) => (
                 <Badge key={skillId} className="text-sm py-1 px-3 bg-primary/50 hover:bg-primary/70 transition-colors">
