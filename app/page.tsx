@@ -39,7 +39,7 @@ export default function Home() {
     {
       title: "Syncblend App",
       description: "SyncBlend is a web platform designed specifically for high schools, with an innovative approach to managing 14-18 year old students.",
-      tags: ["Vue.js", "Node.js", "Laravel", "Tailwind CSS", "Python"],
+      tags: ["Vue.js", "NodeJs", "Laravel", "Tailwind CSS", "Python"],
       link: "#",
       github: "https://github.com/jaendev/syncblendApp"
     },
@@ -51,34 +51,20 @@ export default function Home() {
       github: "https://github.com/jaendev/dungeonGame"
     },
     {
-      title: "AI Content Generator",
-      description: "AI-powered content generation tool using OpenAI's GPT-3",
-      tags: ["Python", "FastAPI", "React", "OpenAI"],
+      title: "Profenet",
+      description: "ProfeNet is an educational platform that facilitates the management and visualization of teachers' courses. It allows teachers to view their assigned courses and manage them efficiently, offering an intuitive and modern interface.",
+      tags: ["NodeJs", "FastAPI", "NextJS", "Moodle"],
       link: "#",
       github: "#"
-    }
+    },
+    {
+      title: "Triplan (in progres)",
+      description: "TriPlan is a personalized travel planning tool that allows users to customize their trips by choosing their destination, duration, trip type, and budget, providing optimized plans based on their preferences.",
+      tags: ["NodeJs", "Laravel", "NuxtJS", "Gemini"],
+      link: "#",
+      github: "#"
+    },
   ];
-
-  // List of skills: frontend, backend, databases, tools and others
-  const skills = [
-    "HTML",
-    "CSS",
-    "Java",
-    "Python",
-    "JavaScript",
-    "TypeScript",
-    "React",
-    "Next.js",
-    "VUE",
-    "Nuxt",
-    "Tailwind CSS",
-    "Node.js",
-    "Laravel",
-    "Mysql",
-    "MongoDB",
-    "Cloding",
-    "React Native",
-  ]
 
   const frontend = [
     "HTML",
@@ -101,7 +87,7 @@ export default function Home() {
   ]
 
   const backend = [
-    "Node.js",
+    "NodeJs",
     "Laravel",
     "PHP",
     "Python",
